@@ -1,0 +1,94 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ui-mobile-rendering" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Best Buy</title>
+  <meta name="description" content="Best Buy">
+
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="header">
+          <h1>Best Buy</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" >
+          <ul class="nav nav-pills nav-stacked">
+          </ul>
+        </div>
+      </div>      
+      <div class="col-md-9">
+        <div id="content" class="row">
+          <h2></h2>
+          <div class="list"></div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>
+
+<script type="text/template" class="navbar-item">
+    <li><a href="#/cat/<%= cat.getId() %>"><%= cat.getName() %></a></li>
+
+</script> 
+
+<script type="text/template" class="product">
+   <div class="col-md-4 product">
+      <div class="thumbnail">
+        <img src="http://www.bestbuy.ca<%= product.getThumbnailImage()%>" alt='<%=product.getName()%>'>
+        <div class="caption">
+          <h3><%=product.getName()%></h3>
+          <p><%= product.getShortDescription()%>...</p>
+        </div>
+      </div>
+   </div>
+</script>
+
+<script type="text/template" class="modal"> 
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%=product.getName()%></h4>
+      </div>
+      <div class="modal-body clearfix">
+        <img class="pull-left" src="http://www.bestbuy.ca<%= product.getThumbnailImage()%>" alt='<%=product.getName()%>'>
+       <%= product.getShortDescription()%>
+      </div>
+</script>
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>  
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/underscore-min.js"></script>  
+<script type="text/javascript" src="js/classes.js"></script>  
+<script type="text/javascript" src="js/views.js"></script>  
+<script type="text/javascript" src="js/app.js"></script>  
+<script type="text/javascript">
+ var App = new App();
+</script>
+
+</body>
+</html>

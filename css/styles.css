@@ -1,0 +1,17 @@
+.product{
+	cursor: pointer;
+	overflow: hidden;
+}
+.product img{
+	max-height: 150px;
+}
+.product .caption{
+	height: 185px;
+	overflow: hidden;
+}
+.product h3{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%; 
+	white-space: nowrap;
+}
